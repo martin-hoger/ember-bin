@@ -2,11 +2,15 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $SCRIPT_DIR/..
 
+#curl https://api.github.com/users/martin-hoger/repos | sed -r "s/,/\n/g" | grep "full_name" | grep "ember" | grep -v "ember-bin"
+
+
 read -p "This script will install multiple submodules, continue? [n] " CONTINUE
 if [[ "$CONTINUE" != "y" ]]; then
     echo "skipping..."
     exit
 fi
+
 
 mkdir -p lib
 
