@@ -8,5 +8,5 @@ echo "/usr/bin/chromium-renamed --no-sandbox --user-data-dir \$@" > /usr/bin/chr
 
 Xvfb :1 -screen 0 1024x768x16 &
 export DISPLAY=:1.0
-ember test --server
+ember test --server --query "&nojshint"
 
