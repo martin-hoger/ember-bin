@@ -5,7 +5,11 @@ cd $SCRIPT_DIR/..
 
 read -p "Reset all packages?" KEY
 
-docker run -it --rm -v "$PWD":/data mhoger/ember rm -rf node_modules bower_components tmp
-docker run -it --rm -v "$PWD":/data mhoger/ember npm install
-docker run -it --rm -v "$PWD":/data mhoger/ember bower install --allow-root 
+sudo docker run -it --rm -v "$PWD":/data mhoger/ember sh -c "
+    rm -rf node_modules bower_components tmp
+    chmod 777 /root -R
+    chown node:node /root -R
+    npm install
+    bower install --allow-root 
+"
 # ./bin/ember-rebuild-node-sass.sh
