@@ -4,9 +4,9 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $SCRIPT_DIR/..
 
 # Remove running container
-docker rm -f "ember" &> /dev/null
+sudo docker rm -f "ember" &> /dev/null
 
-docker run \
+sudo docker run \
     -it --rm \
     -v "$PWD":/data \
     -p 4200:4200 \
