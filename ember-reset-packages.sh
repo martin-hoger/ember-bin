@@ -9,7 +9,8 @@ sudo docker run -it --rm -v "$PWD":/data mhoger/ember sh -c "
     rm -rf node_modules bower_components tmp
     chmod 777 /root -R
     chown node:node /root -R
-    npm install
     bower install --allow-root 
+    yarn install
 "
+    # npm install
 # ./bin/ember-rebuild-node-sass.sh
