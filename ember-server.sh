@@ -17,6 +17,7 @@ docker run \
     -p 4200:4200 \
     -p 49152:49152 \
     -e "API_HOST=$API_HOST" \
+    --platform="linux/amd64" \
     --name="ember" \
     mhoger/ember \
     ember server --port 4200 --live-reload-port 49152
