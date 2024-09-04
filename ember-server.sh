@@ -20,4 +20,4 @@ docker run \
     --platform="linux/amd64" \
     --name="ember" \
     mhoger/ember \
-    ember server --port 4200 --live-reload-port 49152
+    node --max_old_space_size=999999 /data/node_modules/.bin/ember server --port 4200 --live-reload-port 49152
