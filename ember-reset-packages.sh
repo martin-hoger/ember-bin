@@ -19,8 +19,8 @@ $SUDO_PREFIX docker run -it \
     rm -rf node_modules bower_components tmp
     chmod 777 /root -R
     chown node:node /root -R
-    bower install --allow-root 
+    bower install --allow-root
     yarn install
+    npm install
 "
-    # npm install
 # ./bin/ember-rebuild-node-sass.sh
