@@ -14,10 +14,11 @@ fi
 sudo docker run \
     -it --rm \
     -v "$PWD":/data \
+    --platform="linux/amd64" \
     mhoger/ember \
     node --max_old_space_size=999999 /usr/local/bin/ember build --environment="$ENV_NAME"
 
-# MH: 
+# MH:
 #
 # https://stackoverflow.com/questions/37509159/ember-js-pass-options-to-node-js
 #
