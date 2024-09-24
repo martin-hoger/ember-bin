@@ -3,7 +3,7 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $SCRIPT_DIR/..
 
-ENV_NAME=$1
+ENV_NAME="$1"
 # ENV_NAME="development"
 if [[ "$ENV_NAME" == "" ]]; then
     echo "Error: you must specify environment name"

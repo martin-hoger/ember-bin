@@ -8,9 +8,15 @@ if [[ "$API_HOST" != "" ]]; then
     echo "API host: $API_HOST"
 fi
 
+# ENV_NAME="development"
+if [[ "$ENV_NAME" == "" ]]; then
+    ENV_NAME="development"
+fi
+
 # Remove running container
 docker rm -f "ember" &> /dev/null
 
+echo "Environment: $ENV_NAME"
 docker run \
     -it --rm \
     -v "$PWD":/data \
@@ -20,4 +26,4 @@ docker run \
     --platform="linux/amd64" \
     --name="ember" \
     mhoger/ember \
-    node --max_old_space_size=999999 /data/node_modules/.bin/ember server --port 4200 --live-reload-port 49152
+    node --max_old_space_size=999999 /data/node_modules/.bin/ember server --port 4200 --live-reload-port 49152 --environment="$ENV_NAME"
